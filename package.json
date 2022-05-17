@@ -1,0 +1,44 @@
+{
+  "name": "spassessment",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "./src/index.ts",
+  "scripts": {
+    "clean": "rimraf dist",
+    "compile": "cross-env-shell babel src -d dist --source-maps --extensions '.ts'",
+    "build": "npm run clean && npm run compile",
+    "typecheck": "tsc --p .",
+    "build-typecheck": "npm run typecheck && npm run build",
+    "start": "npm run build-typecheck && node ./dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gunnarmarino/spassessment.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gunnarmarino/spassessment/issues"
+  },
+  "homepage": "https://github.com/gunnarmarino/spassessment#readme",
+  "devDependencies": {
+    "@types/d3-geo": "^3.0.2",
+    "@types/nodemailer": "^6.4.4",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.4"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.17.12",
+    "@babel/preset-env": "^7.17.12",
+    "@babel/preset-typescript": "^7.17.12",
+    "@types/geojson": "^7946.0.8",
+    "axios": "^0.27.2",
+    "cross-env": "^7.0.3",
+    "d3-geo": "^3.0.1",
+    "nodemailer": "^6.7.5",
+    "rimraf": "^3.0.2"
+  }
+}
